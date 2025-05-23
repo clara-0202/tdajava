@@ -17,12 +17,13 @@ public class Conjunto implements ConjuntoTDA{
     }
 
    public void Agregar(int x){
-        if ((!this.Pertenece(x))){
+        if ((!Pertenece(x))){
             elementos[cantidad]=x;
             cantidad++;
         }
     }
 
+    //[2,3,4] cantidad 3 x=3
     public void Eliminar(int x){
         int i = 0;
         while (i < cantidad && elementos[i] != x) {
@@ -38,13 +39,14 @@ public class Conjunto implements ConjuntoTDA{
         return elementos[cantidad-1];
     }
 
-    //ver bien est6o como funciona
-    public boolean Pertenece(int x){
-        int i=0;
-        while(i<cantidad && elementos[i] !=x){
-            i++;
+
+    public boolean Pertenece(int x) {
+        for (int i = 0; i < cantidad; i++) {
+            if (elementos[i] == x) {
+                return true;
+            }
         }
-        return (i<cantidad);
+        return false;
     }
 
     public boolean ConjuntoVacio(){

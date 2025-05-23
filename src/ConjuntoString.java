@@ -8,7 +8,7 @@ public class ConjuntoString implements ConjuntoStringTDA {
     }
 
     public void Agregar(String x) {
-        if (!Pertenece(x) && cantidad < 100) {
+        if (!Pertenece(x)) {
             elementos[cantidad] = x;
             cantidad++;
         }
